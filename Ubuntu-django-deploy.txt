@@ -1,0 +1,47 @@
+useradd uname
+passwd uname
+
+visudo
+
+su uname
+chsh uname
+     /bin/bash
+sudo chown -R uname .
+
+sudo aptitude update
+ssh-keygen -t rsa
+# Add keys to github
+cat .ssh/id_rsa.pub
+# Update your key
+vim .ssh/authorized_keys
+#Change permissions
+sudo chown -R uname:uname /home/uname/.ssh
+#Dont allow others to snoop into id_rsa and authorized_keys
+sudo chmod 600 .ssh/authorized_keys
+sudo chmod 700 .ssh/id_rsa
+
+sudo aptitude install python-setuptools
+sudo aptitude install git git-core subversion
+sudo aptitude install python-dev python-crypto
+sudo aptitude install libjpeg libjpeg-dev
+sudo aptitude install libfreetype6 libfreetype6-dev
+sudo aptitude install build-essential
+sudo aptitude install mysql-server python-mysqldb
+
+sudo easy_install pip
+sudo pip install PIL
+sudo pip install virtualenv virtualenvwrapper django
+
+mkdir www
+cd www
+git clone here
+
+python manage.py runserver 0:8000
+
+
+sudo aptitude install apache2 libapache2-mod-python nginx
+sudo aptitude install libapache2-mod-wsgi
+
+
+
+
